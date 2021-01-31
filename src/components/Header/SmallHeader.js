@@ -4,7 +4,7 @@ import {IonHeader, IonTitle, IonToolbar} from '@ionic/react';
 const SmallHeader = ({title}) => {
   return (
     <IonHeader collapse="condense">
-      <IonToolbar color="primary">
+      <IonToolbar style={{ background: "#cc4d29" }} color="primary">
         <IonTitle size="small">{title}</IonTitle>
       </IonToolbar>
     
