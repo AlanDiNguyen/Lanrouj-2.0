@@ -14,6 +14,7 @@ const Problems = () => {
                 <IonButton expand="block" href={"https://binarysearch.com/"} color="primary" fill="outline">
                   Can you stay with me all night, code with me till the daylight? 0x22 + 0x23 ;)
                 </IonButton>
+                <p align="center">Hello! Unfortunately this feature is unfinished. Meanwhile, enjoy BinarySearch ^</p>
               </IonCol>
             </IonRow>
       </IonContent>

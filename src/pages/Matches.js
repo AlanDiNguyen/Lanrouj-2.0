@@ -14,7 +14,7 @@ const Matches = () => {
               <IonButton expand="block" href={"https://tinder.com/?lang=en"} color="primary" fill="outline">
                 Hot Singles Near You
               </IonButton>
-              <p align="center">Hello! Unfortunately this feature is unfinished. Meanwhile, enjoy tinder ^</p>
+              <p align="center">Hello! Unfortunately this feature is unfinished. Meanwhile, enjoy Tinder ^</p>
             </IonCol>
           </IonRow>
       </IonContent>
