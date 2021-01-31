@@ -1,5 +1,5 @@
 import React from 'react';
-import {IonContent, IonItem, IonPage, IonLabel, IonInput, IonRow, IonCol, IonButton, IonRouterLink} from '@ionic/react';
+import {IonContent, IonItem, IonPage, IonLabel, IonInput, IonRow, IonCol, IonButton, IonRouterLink, IonLoading} from '@ionic/react';
 import NavHeader from '../components/Header/NavHeader';
 import {toast} from '../utils/toast';
 import useFormValidation from '../hooks/useFormValidation';
@@ -37,6 +37,7 @@ const Login = (props) => {
     return (
         <IonPage>
             <NavHeader title="Login" />
+            <IonLoading message={"Please wait..."} isOpen={busy} />
             <IonContent>
 
                 <IonItem lines="full">

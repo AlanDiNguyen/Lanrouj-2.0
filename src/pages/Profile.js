@@ -1,27 +1,26 @@
-import React from 'react';
-import {IonButton, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonPage, IonRow} from "@ionic/react";
+import React from "react";
+import {IonButton, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonPage, IonRow,} from "@ionic/react";
 import {personCircleOutline, mailOutline} from 'ionicons/icons'
 import UserContext from "../contexts/UserContext";
 import firebase from '../firebase'
 import { toast } from '../utils/toast'
 import SmallHeader from '../components/Header/SmallHeader';
 import LargeHeader from '../components/Header/LargeHeader';
-import { attachProps } from '@ionic/react/dist/types/components/utils';
-
-async function logoutUser(){
-  try{
-    await firebase.logout();
-    attachProps.history.push("/");
-     toast("You have logged out successfully");
-  }
-  catch(err){
-    console.error("Logout Error", err);
-    toast(err.message);
-  }
-}
 
 const Profile = (props) => {
   const {user} = React.useContext(UserContext);
+
+  async function logoutUser() {
+    try {
+      await firebase.logout();
+      props.history.push("/");
+      toast("You have logged out successfully.");
+    } catch(err) {
+      console.error("Logout Error", err);
+      toast(err.message);
+    }
+  }
+
   return (
     <IonPage>
       <SmallHeader title="Profile" />
@@ -31,7 +30,7 @@ const Profile = (props) => {
           <>
             <IonCard>
               <IonCardContent>
-                <IonList>
+                <IonList lines="none">
                   <IonItem>
                     <IonIcon icon={personCircleOutline} slot="start"></IonIcon>
                     <IonLabel>
@@ -52,7 +51,7 @@ const Profile = (props) => {
 
             <IonRow>
               <IonCol>
-                <IonButton expand="block" routerLink={'/edit-profile'} color="primary" fill="outline">
+                <IonButton expand="block" routerLink={`/edit-profile`} color="primary" fill="outline">
                   Edit Profile
                 </IonButton>
               </IonCol>
@@ -60,17 +59,17 @@ const Profile = (props) => {
 
             <IonRow>
               <IonCol>
-                <IonButton expand="block" color="primary" fill="outline" nCLick={logoutUser}>
+                <IonButton expand="block" color="primary" onClick={logoutUser}>
                   Log Out
                 </IonButton>
               </IonCol>
             </IonRow>
             </>
-        ):(
+        ): (
           <IonGrid>
             <IonRow>
               <IonCol>
-                <IonButton expand="block" routerLink={'/register'} color="primary">
+                <IonButton expand="block" routerLink={`/register`} color="primary">
                   Sign Up
                 </IonButton>
               </IonCol>
@@ -78,7 +77,7 @@ const Profile = (props) => {
 
             <IonRow>
               <IonCol>
-                <IonButton expand="block" routerLink={'/login'} color="primary" fill="outline">
+                <IonButton expand="block" routerLink={`/login`} color="primary" fill="outline">
                   Log In
                 </IonButton>
               </IonCol>
