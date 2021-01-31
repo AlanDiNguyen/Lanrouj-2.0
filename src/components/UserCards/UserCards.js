@@ -2,14 +2,15 @@ import React from 'react';
 import {IonCard, IonCardContent} from '@ionic/react';
 
 
-const UserCard = ({ user }) => {
+const UserCard = (props) => {
   return (
     <IonCard>
-      <img src=""/>
+      <img src="../../../public/assets/icon/icon.png" alt="placeholder img for user"/>
       <ion-card-header>
-          <ion-card-title></ion-card-title>
+          <ion-card-title>props.name</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        You lookin for a stack overflow attack ;)
       </ion-card-content>
     </IonCard>
   );
