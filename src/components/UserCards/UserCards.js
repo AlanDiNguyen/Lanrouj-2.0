@@ -2,7 +2,7 @@ import React from 'react';
 import {IonCard, IonCardContent} from '@ionic/react';
 
 
-const UserCard = ( name ) => {
+const UserCard = ({name} ) => {
   return (
     <IonCard>
       <img src="../../../public/assets/icon/icon.png" alt="placeholder img for user"/>

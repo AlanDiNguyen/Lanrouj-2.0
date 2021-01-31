@@ -11,7 +11,7 @@ const Home = () => {
       <SmallHeader title="LanRouj" />
       <IonContent fullscreen>
         <LargeHeader title="LanRouj" />
-        <UserCards user="placeholder"/>
+        <UserCards name="placeholder"/>
       </IonContent>
     </IonPage>
   );
