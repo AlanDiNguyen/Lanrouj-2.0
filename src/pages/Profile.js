@@ -1,26 +1,27 @@
 import React from 'react';
 import {IonButton, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonPage, IonRow} from "@ionic/react";
 import {personCircleOutline, mailOutline} from 'ionicons/icons'
-// TODO: IMPORT USER CONTEXT
-// import firebase from '../firebase'
-// import { toast } from '../utils/toast'
-// import SmallHeader from '../components/Header/SmallHeader';
-// import LargeHeader from '../components/Header/LargeHeader';
-// import { attachProps } from '@ionic/react/dist/types/components/utils';
+import UserContext from "../contexts/UserContext";
+import firebase from '../firebase'
+import { toast } from '../utils/toast'
+import SmallHeader from '../components/Header/SmallHeader';
+import LargeHeader from '../components/Header/LargeHeader';
+import { attachProps } from '@ionic/react/dist/types/components/utils';
 
 async function logoutUser(){
   try{
-    //await firebase.logout();
+    await firebase.logout();
     attachProps.history.push("/");
-    // toast("You have logged out successfully");
+     toast("You have logged out successfully");
   }
   catch(err){
     console.error("Logout Error", err);
-    // toast(err.message);
+    toast(err.message);
   }
 }
 
-const Profile = () => {
+const Profile = (props) => {
+  const {user} = React.useContext(UserContext);
   return (
     <IonPage>
       <SmallHeader title="Profile" />
