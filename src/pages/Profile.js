@@ -31,6 +31,7 @@ const Profile = (props) => {
             <IonCard>
               <IonCardContent>
                 <IonList lines="none">
+
                   <IonItem>
                     <IonIcon icon={personCircleOutline} slot="start"></IonIcon>
                     <IonLabel>
@@ -38,6 +39,7 @@ const Profile = (props) => {
                       <p>Username</p>
                     </IonLabel>
                   </IonItem>
+
                   <IonItem>
                     <IonIcon icon={mailOutline} slot="start"></IonIcon>
                     <IonLabel>
@@ -45,6 +47,7 @@ const Profile = (props) => {
                       <p>Email</p>
                     </IonLabel>
                   </IonItem>
+                  
                 </IonList>
               </IonCardContent>
             </IonCard>
