@@ -8,13 +8,13 @@ function useFormValidation(initialState, validate, action) {
 
     React.useEffect(() => {
         if(isSubmitting) {
-            const noErrors = Object.keys(erros).length === 0;
+            const noErrors = Object.keys(errors).length === 0;
             if(noErrors) {
                 action();
                 setValues(initialState);
                 setSubmitting(false);
             } else {
-                toast(Object.values(erros).join(" "));
+                toast(Object.values(errors).join(" "));
                 setSubmitting(false);
             }
         }
