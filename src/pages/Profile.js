@@ -1,7 +1,24 @@
 import React from 'react';
-import {IonContent, IonPage} from "@ionic/react";
-import SmallHeader from '../components/Header/SmallHeader';
-import LargeHeader from '../components/Header/LargeHeader';
+import {IonButton, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonPage, IonRow} from "@ionic/react";
+import {personCircleOutline, mailOutline} from 'ionicons/icons'
+// TODO: IMPORT USER CONTEXT
+// import firebase from '../firebase'
+// import { toast } from '../utils/toast'
+// import SmallHeader from '../components/Header/SmallHeader';
+// import LargeHeader from '../components/Header/LargeHeader';
+// import { attachProps } from '@ionic/react/dist/types/components/utils';
+
+async function logoutUser(){
+  try{
+    //await firebase.logout();
+    attachProps.history.push("/");
+    // toast("You have logged out successfully");
+  }
+  catch(err){
+    console.error("Logout Error", err);
+    // toast(err.message);
+  }
+}
 
 const Profile = () => {
   return (
@@ -9,6 +26,64 @@ const Profile = () => {
       <SmallHeader title="Profile" />
       <IonContent fullscreen>
         <LargeHeader title="Profile" />
+        {user ? (
+          <>
+            <IonCard>
+              <IonCardContent>
+                <IonList>
+                  <IonItem>
+                    <IonIcon icon={personCircleOutline} slot="start"></IonIcon>
+                    <IonLabel>
+                      <strong>{user.displayName}</strong>
+                      <p>Username</p>
+                    </IonLabel>
+                  </IonItem>
+                  <IonItem>
+                    <IonIcon icon={mailOutline} slot="start"></IonIcon>
+                    <IonLabel>
+                      <strong>{user.email}</strong>
+                      <p>Email</p>
+                    </IonLabel>
+                  </IonItem>
+                </IonList>
+              </IonCardContent>
+            </IonCard>
+
+            <IonRow>
+              <IonCol>
+                <IonButton expand="block" routerLink={'/edit-profile'} color="primary" fill="outline">
+                  Edit Profile
+                </IonButton>
+              </IonCol>
+            </IonRow>
+
+            <IonRow>
+              <IonCol>
+                <IonButton expand="block" color="primary" fill="outline" nCLick={logoutUser}>
+                  Log Out
+                </IonButton>
+              </IonCol>
+            </IonRow>
+            </>
+        ):(
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+                <IonButton expand="block" routerLink={'/register'} color="primary">
+                  Sign Up
+                </IonButton>
+              </IonCol>
+            </IonRow>
+
+            <IonRow>
+              <IonCol>
+                <IonButton expand="block" routerLink={'/login'} color="primary" fill="outline">
+                  Log In
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        )}
       </IonContent>
     </IonPage>
   );
