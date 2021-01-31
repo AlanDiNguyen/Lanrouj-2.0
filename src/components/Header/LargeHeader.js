@@ -7,9 +7,8 @@ const LargeHeader = ({title}) => {
       <IonToolbar color="primary">
         <IonTitle size="large">{title}</IonTitle>
       </IonToolbar>
-    
     </IonHeader>
-  )
-}
+  );
+};
 
 export default LargeHeader;

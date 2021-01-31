@@ -11,8 +11,8 @@ const Profile = () => {
         <LargeHeader title="Profile" />
       </IonContent>
     </IonPage>
-  )
-}
+  );
+};
 
 
 export default Profile;

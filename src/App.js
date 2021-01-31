@@ -33,8 +33,8 @@ const App  = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route exact path="/" render={() => <Redirect to="/home" />} exact={true} />
-            <Route path="/home" component={Home} />
+            <Route exact path="/" render={() => <Redirect to="/home" />}  />
+            <Route path="/home" component={Home} exact={true}/>
             <Route path="/profile" component={Profile} />
             <Route path="/matches" component={Matches} />
             <Route path="/problems" component={Problems} />

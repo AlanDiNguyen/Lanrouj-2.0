@@ -11,8 +11,8 @@ const Matches = () => {
         <LargeHeader title="Matches" />
       </IonContent>
     </IonPage>
-  )
-}
+  );
+};
 
 
 export default Matches;

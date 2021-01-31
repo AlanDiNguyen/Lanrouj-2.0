@@ -11,8 +11,8 @@ const Home = () => {
         <LargeHeader title="Meet" />
       </IonContent>
     </IonPage>
-  )
-}
+  );
+};
 
 
 export default Home;

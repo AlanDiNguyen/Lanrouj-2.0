@@ -11,8 +11,8 @@ const Problems = () => {
         <LargeHeader title="Problems" />
       </IonContent>
     </IonPage>
-  )
-}
+  );
+};
 
 
 export default Problems;
