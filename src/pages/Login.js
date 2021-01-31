@@ -11,7 +11,7 @@ const INITIAL_STATE = {
     password: "",
 };
 
-const Login = () => {
+const Login = (props) => {
     const {
         handleSubmit,
         handleChange,
@@ -24,7 +24,7 @@ const Login = () => {
         setBusy(true);
         const {email, password} = values;
         try {
-            await firebase.register( email, password);
+            await firebase.login( email, password);
             toast("You have logged in successfully!");
             props.history.push("/");
         } catch (err) {
