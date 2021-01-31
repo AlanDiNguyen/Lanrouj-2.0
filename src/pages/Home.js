@@ -11,7 +11,13 @@ const Home = () => {
       <SmallHeader title="LanRouj" />
       <IonContent fullscreen>
         <LargeHeader title="LanRouj" />
-        <UserCards name="placeholder"/>
+          <ion-grid>
+            <ion-row justify-content-center align-items center>
+                <ion-col justify-content-center align-items-center>
+                    <UserCards name="placeholder"/>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
       </IonContent>
     </IonPage>
   );
