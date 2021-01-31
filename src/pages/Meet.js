@@ -8,33 +8,7 @@ import SmallHeader from '../components/Header/SmallHeader';
 import LargeHeader from '../components/Header/LargeHeader';
 import {toast} from '../utils/toast';
 
-const INITIAL_STATE = {
-  title: "",
-  description: "",
-  url: "",
-};
-
 const Meet = () => {
-  const {user} = React.useContext(UserContext);
-  const [submitting, setSubmitting] = React.useState(False);
-  const {handleSubmit, handleChange, values} = useFormValidation(
-    INITIAL_STATE,
-    validateCreateProject,
-    handleCreate
-  );
-  async function handleCreate() {
-    try {
-      if (!user) {
-        history.push("/login");
-        return;
-      }
-
-      setSubmitting(true);
-      const { url, description, title } = values;
-      const id = firebase.db.collection("userLikes").doc().id;
-
-    }
-  }
   return (
     <IonPage>
       <SmallHeader title="Meet" />
